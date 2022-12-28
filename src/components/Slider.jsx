@@ -37,7 +37,9 @@ const Arrow = styled.div`
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
-  transform: translateX(${props=>props.slideIndex * -100}vw);
+
+  transition: all 1.2s ease;
+  transform: translateX(${(props) => props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
@@ -82,16 +84,16 @@ const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
   const handleClick = (direction) => {
     direction === "left"
-      ? setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
-      : setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+      ? setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1)
+      : setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
   };
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined></ArrowLeftOutlined>
       </Arrow>
-      <Wrapper slideIndex={slideIndex}> 
-        {sliderItems.map((item) => {
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => (
           <Slide bg={item.bg}>
             <ImgContainer>
               <Image src={item.img}></Image>
@@ -101,42 +103,8 @@ const Slider = () => {
               <Desc>{item.desc}</Desc>
               <Button>Get one now!</Button>
             </InfoContainer>
-          </Slide>;
-        })}
-        <Slide bg="FFEBB7">
-          <ImgContainer>
-            <Image src="https://images.pexels.com/photos/5589865/pexels-photo-5589865.jpeg"></Image>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>
-              Autumn SALE! <TitlePlus>Woah!</TitlePlus>
-            </Title>
-            <Desc></Desc>
-            <Button>Get one now!</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide bg="579BB1">
-          <ImgContainer>
-            <Image src="https://images.pexels.com/photos/6712068/pexels-photo-6712068.jpeg"></Image>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>
-              Winter SALE! <TitlePlus>Woah!</TitlePlus>
-            </Title>
-            <Desc></Desc>
-            <Button>Get one now!</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide bg="FAF8F1">
-          <ImgContainer>
-            <Image src="https://images.pexels.com/photos/6113287/pexels-photo-6113287.jpeg"></Image>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>Our Most Popular Set!</Title>
-            <Desc></Desc>
-            <Button>Get one now!</Button>
-          </InfoContainer>
-        </Slide>
+          </Slide>
+        ))}
       </Wrapper>
       <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined></ArrowRightOutlined>
