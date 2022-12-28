@@ -58,7 +58,7 @@ export const categories = [
   },
   {
     id: 2,
-    img: "https://images.pexels.com/photos/6022627/pexels-photo-6022627.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    img: "https://images.pexels.com/photos/6022627/pexels-photo-6022627.jpeg",
     title: "Autumn SALE!",
   },
   {
