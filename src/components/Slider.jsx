@@ -1,6 +1,7 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { sliderItems } from "../data";
 const Container = styled.div`
   position: relative;
 
@@ -30,21 +31,25 @@ const Arrow = styled.div`
 
   cursor: pointer;
   opacity: 0.5;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
+  transform: translateX(${props=>props.slideIndex * -100}vw);
 `;
 
 const Slide = styled.div`
   display: flex;
   align-items: center;
-  width: 100w;
+  width: 100vw;
   height: 100vh;
+
+  background-color: #${(props) => props.bg};
 `;
 const Image = styled.img`
-  height: 90%;
+  height: 100%;
 `;
 const ImgContainer = styled.div`
   height: 100%;
@@ -61,52 +66,58 @@ const Title = styled.h1`
 const TitlePlus = styled.b`
   font-size: 180px;
 `;
+const Button = styled.button`
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+`;
 const Desc = styled.p`
   margin: 50px 0px;
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
 `;
-const Button = styled.button`
-  padding: 10px;
-  font-size: 20px;
-  background-color: transparent;
-`;
-
 const Slider = () => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const handleClick = (direction) => {
+    direction === "left"
+      ? setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
+      : setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+  };
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlined></ArrowLeftOutlined>
       </Arrow>
-      <Wrapper>
-        <Slide>
+      <Wrapper slideIndex={slideIndex}>
+        {sliderItems.map((item) => {
+          <Slide bg={item.bg}>
+            <ImgContainer>
+              <Image src={item.img}></Image>
+            </ImgContainer>
+            <InfoContainer>
+              <Title>{item.title}</Title> <TitlePlus>Woah!</TitlePlus>
+              <Desc>{item.desc}</Desc>
+              <Button>Get one now!</Button>
+            </InfoContainer>
+          </Slide>;
+        })}
+        <Slide bg="FFEBB7">
           <ImgContainer>
-            <Image src="https://images.pexels.com/photos/4380970/pexels-photo-4380970.jpeg"></Image>
+            <Image src="https://images.pexels.com/photos/5589865/pexels-photo-5589865.jpeg"></Image>
           </ImgContainer>
           <InfoContainer>
             <Title>
-              Spring SALE! <TitlePlus>Woah!</TitlePlus>
+              Autumn SALE! <TitlePlus>Woah!</TitlePlus>
             </Title>
             <Desc></Desc>
             <Button>Get one now!</Button>
           </InfoContainer>
         </Slide>
-        <Slide>
+        <Slide bg="579BB1">
           <ImgContainer>
-            <Image src="https://images.pexels.com/photos/4380970/pexels-photo-4380970.jpeg"></Image>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>
-              Spring SALE! <TitlePlus>Woah!</TitlePlus>
-            </Title>
-            <Desc></Desc>
-            <Button>Get one now!</Button>
-          </InfoContainer>
-        </Slide>
-        <Slide>
-          <ImgContainer>
-            <Image src="https://images.pexels.com/photos/4380970/pexels-photo-4380970.jpeg"></Image>
+            <Image src="https://images.pexels.com/photos/6712068/pexels-photo-6712068.jpeg"></Image>
           </ImgContainer>
           <InfoContainer>
             <Title>
@@ -116,9 +127,9 @@ const Slider = () => {
             <Button>Get one now!</Button>
           </InfoContainer>
         </Slide>
-        <Slide>
+        <Slide bg="FAF8F1">
           <ImgContainer>
-            <Image src="https://images.pexels.com/photos/4380970/pexels-photo-4380970.jpeg"></Image>
+            <Image src="https://images.pexels.com/photos/6113287/pexels-photo-6113287.jpeg"></Image>
           </ImgContainer>
           <InfoContainer>
             <Title>Our Most Popular Set!</Title>
@@ -126,20 +137,8 @@ const Slider = () => {
             <Button>Get one now!</Button>
           </InfoContainer>
         </Slide>
-        <Slide>
-          <ImgContainer>
-            <Image src="https://images.pexels.com/photos/4380970/pexels-photo-4380970.jpeg"></Image>
-          </ImgContainer>
-          <InfoContainer>
-            <Title>
-              Spring SALE! <TitlePlus>Woah!</TitlePlus>
-            </Title>
-            <Desc></Desc>
-            <Button>Get one now!</Button>
-          </InfoContainer>
-        </Slide>
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <ArrowRightOutlined></ArrowRightOutlined>
       </Arrow>
     </Container>
