@@ -67,3 +67,26 @@ export const categories = [
     title: "Winter SALE!",
   },
 ];
+
+export const PopularProducts = [
+  {
+    id: 1,
+    img: "https://media.istockphoto.com/id/1317908889/es/foto/maqueta-de-sudadera-con-capucha-en-blanco-con-cremallera-en-la-vista-frontal-aislada-sobre.jpg?s=612x612&w=0&k=20&c=yym7OMy6OwtWfniP2uBX2e448AXBgupPjjNBdnTvPjQ=",
+  },
+  {
+    id: 3,
+    img: "https://media.istockphoto.com/id/1317910413/es/foto/maqueta-de-chaqueta-bomber-presentación-de-diseño-para-impresión.jpg?s=612x612&w=0&k=20&c=jlrNPUm3IBHRenfu0k959WBX4iTyu_PILk9WeXzD3nQ=",
+  },
+  {
+    id: 4,
+    img: "https://media.istockphoto.com/id/697913836/es/foto/chándal-negro-descomprimido-con-capucha.jpg?s=612x612&w=0&k=20&c=PWgDQN_89i4463_JZhs-KWVvIx7B6LZnTDuKxGsXE1w=",
+  },
+  {
+    id: 5,
+    img: "https://media.istockphoto.com/id/153272570/es/foto/hombre-deporte-jackeе-negro.jpg?s=612x612&w=0&k=20&c=9aNjFcJ5HClvP8TW02nI0Ctl89OCk3u_fXva48CpyVE=",
+  },
+  {
+    id: 6,
+    img: "https://media.istockphoto.com/id/182766377/es/foto/hoodie-sudadera-con-capucha.jpg?s=612x612&w=0&k=20&c=jUfHvXwz1lNYymmzlDLe-qKKmrtB_boYKOWPaKANnVg=",
+  },
+];
