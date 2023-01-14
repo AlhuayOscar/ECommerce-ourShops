@@ -81,12 +81,15 @@ const Desc = styled.p`
   letter-spacing: 3px;
 `;
 const Slider = () => {
+
   const [slideIndex, setSlideIndex] = useState(0);
+
   const handleClick = (direction) => {
     direction === "left"
       ? setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1)
       : setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
   };
+  
   return (
     <Container>
       <Arrow direction="left" onClick={() => handleClick("left")}>
