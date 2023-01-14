@@ -12,6 +12,8 @@ const Container = styled.div`
 const Title = styled.h1`
   font-size: 70px;
   margin-bottom: 20px;
+
+  ${mobile({ fontSize: "55px" })};
 `;
 
 const Description = styled.div`

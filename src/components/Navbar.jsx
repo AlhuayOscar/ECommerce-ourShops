@@ -13,7 +13,7 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
-  ${mobile({ padding: "10px 0px" })}
+  ${mobile({ padding: "10px 20px"})} // Center our navbar items, but fix "Right" style.
 `;
 const Left = styled.div`
   flex: 1;
@@ -29,7 +29,11 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  ${mobile({ flex: 2, justifyContent: "center" })}
+  ${mobile({
+    flex: 2,
+    justifyContent: "center",
+    display: "none",
+  })}//Change display:none with a new Three bars, option menu.
 `;
 const Language = styled.span`
   font-size: 14px;

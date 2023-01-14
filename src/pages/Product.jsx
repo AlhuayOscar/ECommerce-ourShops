@@ -11,13 +11,13 @@ const Container = styled.div``;
 const Wrapper = styled.div`
   padding: 50px;
   display: flex;
-  ${mobile({ padding: "10px", flexDirection:"column" })}
+  ${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImgContainer = styled.div`
   flex: 1;
 `;
-
+//Depends on the mobile
 const Image = styled.img`
   width: 100%;
   height: 90vh;
@@ -44,6 +44,7 @@ const Price = styled.span`
   font-size: 40px;
 `;
 
+//Should keep mobile width at 100%;
 const FilterContainer = styled.div`
   width: 50%;
   margin: 30px 0px;
@@ -74,6 +75,7 @@ const FilterColor = styled.div`
 const FilterSize = styled.select`
   margin-left: 10px;
   padding: 5px;
+  border-width:2px;
 `;
 
 const FilterSizeOption = styled.option``;
@@ -110,8 +112,8 @@ const Button = styled.button`
   cursor: pointer;
   font-weight: 500;
 
-  &:hover{
-      background-color: #f8f4f4;
+  &:hover {
+    background-color: #f8f4f4;
   }
 `;
 
@@ -125,15 +127,14 @@ const Product = () => {
           <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
+          <Title>Denim Jeans</Title>
           <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-            tristique tortor pretium ut. Curabitur elit justo, consequat id
-            condimentum ac, volutpat ornare.
+            I'm real proud of you for coming, bro. I know you hate funerals. I'm
+            really more an apartment person. Pretend. You pretend the feelings
+            are there, for the world, for the people around you. Who knows?
+            Maybe one day they will be.
           </Desc>
-          <Price>$ 20</Price>
+          <Price>ARS$ 4700</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
