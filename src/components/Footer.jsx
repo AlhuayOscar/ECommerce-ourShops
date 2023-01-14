@@ -42,7 +42,7 @@ const SocialIcon = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-  margin-top:10px;
+  margin-top: 10px;
 `;
 
 const Center = styled.div`
@@ -88,7 +88,7 @@ function Footer() {
   return (
     <Container>
       <Left>
-        <Logo>LAMA.</Logo>
+        <Logo>OurShops</Logo>
         <Desc>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ex odit
           quae animi, accusamus suscipit illo totam non architecto recusandae
@@ -128,14 +128,15 @@ function Footer() {
       <Right>
         <Title>Contact</Title>
         <ContactItem>
-          <Room style={{ marginRight: "10px" }} /> 164 Juan Ehlert  , West Zárate
+          <Room style={{ marginRight: "10px" }} /> 164 Juan Ehlert , West Zárate
           Buenos Aires B2800
         </ContactItem>
         <ContactItem>
           <Phone style={{ marginRight: "10px" }} /> +54 3487 477269
         </ContactItem>
         <ContactItem>
-          <MailOutline style={{ marginRight: "10px" }} /> oscar_alhuay2001@hotmail.com
+          <MailOutline style={{ marginRight: "10px" }} />{" "}
+          oscar_alhuay2001@hotmail.com
         </ContactItem>
         <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
       </Right>
