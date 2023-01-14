@@ -7,7 +7,7 @@ import Cart from "./pages/Cart";
 import Home from "./pages/Home";
 
 const App = () => {
-  return <Product />; //Intercambiar la pagina aquí => return<Pagina />;
+  return <Home />; //Intercambiar la pagina aquí => return<Pagina />;
 };
 
 export default App;
